@@ -44,7 +44,7 @@
 		1571BDAD1C4544BE00E60C19 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1571BDA51C4544BE00E60C19 /* SystemConfiguration.framework */; };
 		1571BDB21C45482D00E60C19 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1571BDB11C45482D00E60C19 /* libsqlite3.dylib */; };
 		1571BDB41C4551F100E60C19 /* newPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1571BDB31C4551F100E60C19 /* newPhotoViewController.swift */; };
-		15A75B671C64DF2F009CE6EA /* CoreDataStackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A75B661C64DF2F009CE6EA /* CoreDataStackManager.swift */; };
+		15A75B691C64E01D009CE6EA /* CoreDataStackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A75B681C64E01D009CE6EA /* CoreDataStackManager.swift */; };
 		15F7B7D91C52B1740029803F /* FavoriteComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F7B7D81C52B1740029803F /* FavoriteComment.swift */; };
 		15F7B7DD1C52B3620029803F /* favoriteCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F7B7DC1C52B3620029803F /* favoriteCommentViewController.swift */; };
 		15F7B7E01C52B97E0029803F /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 15F7B7DE1C52B97E0029803F /* Model.xcdatamodeld */; };
@@ -112,7 +112,7 @@
 		1571BDAE1C45454D00E60C19 /* MyForum-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyForum-Bridging-Header.h"; sourceTree = "<group>"; };
 		1571BDB11C45482D00E60C19 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		1571BDB31C4551F100E60C19 /* newPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newPhotoViewController.swift; sourceTree = "<group>"; };
-		15A75B661C64DF2F009CE6EA /* CoreDataStackManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataStackManager.swift; path = "../../ios-persistence-2.0/CoreDataFavoriteActors/FavoriteActors/CoreDataStackManager.swift"; sourceTree = "<group>"; };
+		15A75B681C64E01D009CE6EA /* CoreDataStackManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStackManager.swift; sourceTree = "<group>"; };
 		15F7B7D81C52B1740029803F /* FavoriteComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteComment.swift; sourceTree = "<group>"; };
 		15F7B7DC1C52B3620029803F /* favoriteCommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = favoriteCommentViewController.swift; sourceTree = "<group>"; };
 		15F7B7DF1C52B97E0029803F /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -221,7 +221,6 @@
 		1571BD561C443FB500E60C19 /* MyForum */ = {
 			isa = PBXGroup;
 			children = (
-				15A75B661C64DF2F009CE6EA /* CoreDataStackManager.swift */,
 				15F7B7DE1C52B97E0029803F /* Model.xcdatamodeld */,
 				1571BD8E1C44865000E60C19 /* Framework */,
 				1571BD8B1C447BDF00E60C19 /* Model */,
@@ -232,6 +231,7 @@
 				1571BD631C443FB500E60C19 /* LaunchScreen.storyboard */,
 				1571BD661C443FB500E60C19 /* Info.plist */,
 				1571BDAE1C45454D00E60C19 /* MyForum-Bridging-Header.h */,
+				15A75B681C64E01D009CE6EA /* CoreDataStackManager.swift */,
 			);
 			path = MyForum;
 			sourceTree = "<group>";
@@ -455,7 +455,7 @@
 				154F009D1C64460600EDE68C /* GlobalVariables.swift in Sources */,
 				1571BDB41C4551F100E60C19 /* newPhotoViewController.swift in Sources */,
 				1571BD5A1C443FB500E60C19 /* logiViewController.swift in Sources */,
-				15A75B671C64DF2F009CE6EA /* CoreDataStackManager.swift in Sources */,
+				15A75B691C64E01D009CE6EA /* CoreDataStackManager.swift in Sources */,
 				1571BD581C443FB500E60C19 /* AppDelegate.swift in Sources */,
 				1522A26B1C4EF15800BA7D3C /* newForumPostViewController.swift in Sources */,
 				1571BD8D1C447D2B00E60C19 /* ForumTableViewCell.swift in Sources */,
