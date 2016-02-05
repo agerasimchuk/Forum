@@ -381,11 +381,16 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XEh-MB-c4N">
                                 <rect key="frame" x="20" y="143" width="360" height="370"/>
                             </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="6qK-uU-7At">
+                                <rect key="frame" x="190" y="312" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="nYI-Xz-tIZ" firstAttribute="leading" secondItem="rXU-c5-STi" secondAttribute="leadingMargin" id="0rn-Gb-4wd"/>
                             <constraint firstItem="Ejg-2n-n64" firstAttribute="top" secondItem="XEh-MB-c4N" secondAttribute="bottom" constant="15" id="3w1-uo-UDm"/>
+                            <constraint firstItem="6qK-uU-7At" firstAttribute="centerX" secondItem="XEh-MB-c4N" secondAttribute="centerX" id="7J9-I2-zw2"/>
+                            <constraint firstItem="6qK-uU-7At" firstAttribute="centerY" secondItem="rXU-c5-STi" secondAttribute="centerY" id="IFi-OL-HMa"/>
                             <constraint firstItem="XEh-MB-c4N" firstAttribute="leading" secondItem="rXU-c5-STi" secondAttribute="leadingMargin" id="IMW-zX-Qgl"/>
                             <constraint firstItem="nYI-Xz-tIZ" firstAttribute="top" secondItem="GOA-19-eeC" secondAttribute="bottom" id="MPH-cx-JUC"/>
                             <constraint firstItem="XEh-MB-c4N" firstAttribute="trailing" secondItem="rXU-c5-STi" secondAttribute="trailingMargin" id="NPH-1S-yiy"/>
@@ -408,6 +413,7 @@
                     <connections>
                         <outlet property="commentField" destination="nYI-Xz-tIZ" id="65G-XZ-28l"/>
                         <outlet property="imageToUpload" destination="XEh-MB-c4N" id="chY-Nq-Dz4"/>
+                        <outlet property="loadingSpinner" destination="6qK-uU-7At" id="wLl-9f-R39"/>
                         <outlet property="saveComment" destination="sGm-3i-8Rx" id="wDU-TZ-mjb"/>
                     </connections>
                 </viewController>
@@ -681,9 +687,9 @@
     </scenes>
     <resources>
         <image name="Cup" width="586" height="812"/>
-        <image name="Favorites" width="537" height="181"/>
-        <image name="MyForum" width="537" height="181"/>
-        <image name="Photos" width="537" height="181"/>
+        <image name="Favorites" width="175" height="35"/>
+        <image name="MyForum" width="118" height="34"/>
+        <image name="Photos" width="125" height="35"/>
         <image name="theme" width="752" height="554"/>
     </resources>
     <inferredMetricsTieBreakers>

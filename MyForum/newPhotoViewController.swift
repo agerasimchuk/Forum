@@ -15,6 +15,7 @@ class newPhotoViewController: UIViewController, UITextViewDelegate{
     @IBOutlet weak var imageToUpload: UIImageView!
     @IBOutlet weak var commentField: UITextView!
     @IBOutlet weak var saveComment: UIBarButtonItem!
+    @IBOutlet weak var loadingSpinner: UIActivityIndicatorView!
     
     let PLACEHOLDER_TEXT = "Add your comments"
     
@@ -27,6 +28,7 @@ class newPhotoViewController: UIViewController, UITextViewDelegate{
     commentField.delegate = self
     commentField.text = PLACEHOLDER_TEXT
     commentField.textColor = UIColor.lightGrayColor()
+    loadingSpinner.hidden = true
     
     }
     
@@ -60,11 +62,12 @@ class newPhotoViewController: UIViewController, UITextViewDelegate{
         
         //Disable the send button until we are ready
         navigationItem.rightBarButtonItem?.enabled = false
-        
-        //loadingSpinner.startAnimating()
+        loadingSpinner.hidden = false
+        loadingSpinner.startAnimating()
         
         //TODO: Upload a new picture
         let pictureData = UIImageJPEGRepresentation(imageToUpload.image!, 1.0)
+        //let pictureData = UIImagePNGRepresentation(imageToUpload.image!)
         
         //1
         let file = PFFile(name: "image", data: pictureData!)
@@ -87,14 +90,17 @@ class newPhotoViewController: UIViewController, UITextViewDelegate{
         //1
         let picturePost = ForumPost(image: file, comment: self.commentField.text, user: PFUser.currentUser()! )
         //2
+        print("in saveWall Post")
         picturePost.saveInBackgroundWithBlock{ succeeded, error in
             if succeeded {
                 //3
                 self.navigationController?.popViewControllerAnimated(true)
+                print("image saved")
             } else {
                 //4
                 if let errorMessage = error?.userInfo["error"] as? String {
                     self.showErrorView(error!)
+                    print("could not save")
                 }
             }
         }
