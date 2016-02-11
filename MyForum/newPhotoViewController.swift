@@ -75,9 +75,12 @@ class newPhotoViewController: UIViewController, UITextViewDelegate{
             if succeeded {
                 //2
                 self.saveWallPost(file!)
+                self.loadingSpinner.hidden = true
             } else if let error = error {
                 //3
                 self.showErrorView(error)
+                self.loadingSpinner.hidden = true
+
             }
             }, progressBlock: { percent in
                 //4
@@ -100,7 +103,9 @@ class newPhotoViewController: UIViewController, UITextViewDelegate{
                 //4
                 if let errorMessage = error?.userInfo["error"] as? String {
                     self.showErrorView(error!)
-                    print("could not save")
+                    //print("could not save")
+                    
+                    self.loadingSpinner.stopAnimating()
                 }
             }
         }

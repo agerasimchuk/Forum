@@ -15,13 +15,7 @@ class RegisterViewController: UIViewController {
     
     let tableViewWallSegue = "SignupSuccesfulTable"
     
-    // MARK: - Lifecycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
-    }
-    
+     
     // MARK: - Actions
     @IBAction func signUpPressed(sender: AnyObject) {
         //TODO
@@ -37,11 +31,11 @@ class RegisterViewController: UIViewController {
             if (succeeded) {
                 //The registration was successful, go to the wall
                 //self.performSegueWithIdentifier(self.tableViewWallSegue, sender: nil)
-                var controller = HomeViewController()
-                controller = self.storyboard?.instantiateViewControllerWithIdentifier("HomeViewController") as! HomeViewController
+                var controller = UINavigationController()
+                controller = self.storyboard?.instantiateViewControllerWithIdentifier("navForumController") as! UINavigationController
                 
                 self.presentViewController(controller, animated: true, completion: nil)
-
+                
             } else if let error = error {
                 //Something bad has occurred
                 self.showErrorView(error)
@@ -51,8 +45,8 @@ class RegisterViewController: UIViewController {
         
         //If signup sucessful:
         //performSegueWithIdentifier(self.tableViewWallSegue, sender: nil)
-        var controller = HomeViewController()
-        controller = self.storyboard?.instantiateViewControllerWithIdentifier("HomeViewController") as! HomeViewController
+        var controller = UINavigationController()
+        controller = self.storyboard?.instantiateViewControllerWithIdentifier("navForumController") as! UINavigationController
         
         self.presentViewController(controller, animated: true, completion: nil)
 

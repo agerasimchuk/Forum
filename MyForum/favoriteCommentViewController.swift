@@ -47,11 +47,9 @@ class favoriteCommentsViewController: UITableViewController, NSFetchedResultsCon
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        /* "Edit" button for left side of nav bar
-        `UIViewController#editButtonItem` returns `UIBarButtonItem`
-        that toggles the `UITableView` editing mode */
-        //self.navigationItem.leftBarButtonItem = self.editButtonItem()
+ 
+        //tableView.frame = CGRectMake(0.0, <#T##y: CGFloat##CGFloat#>, <#T##width: CGFloat##CGFloat#>, <#T##height: CGFloat##CGFloat#>)
+        tableView.frame = CGRectMake(2.0, 5.0, tableView.frame.size.width, tableView.frame.size.height);
         
         tableView.delegate = self
         
@@ -188,5 +186,6 @@ class favoriteCommentsViewController: UITableViewController, NSFetchedResultsCon
         
         presentViewController(controller, animated: true, completion: nil)
     }
+        
 
 }

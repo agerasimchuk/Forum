@@ -28,6 +28,22 @@ class commentsViewController: PFQueryTableViewController, NSFetchedResultsContro
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let user = PFUser.currentUser() {
+            print("user is: \(user)")
+            if user.authenticated {
+                print("this user is authenticated: \(user.authenticated)")
+                //Sequge with identifier will work only if we embed in navigator
+                //self.performSegueWithIdentifier(self.tableViewWallSegue, sender: nil)
+                
+                
+                
+                
+            }else{
+                print("User cannot login")
+                
+            }
+
+        }
         
         print("Saved in view DID LOad is : \(GlobalVariables.sharedManager.saved)")
         self.tableView.estimatedRowHeight = 500
@@ -45,15 +61,16 @@ class commentsViewController: PFQueryTableViewController, NSFetchedResultsContro
         return query!
     }
     
+    //USE THIS IF YOU WANT TO GO BACK MODALLY. CURRENTLY WE ARE USING NAVIGATION
+    /*
     @IBAction func backHome(sender: AnyObject) {
         var controller = HomeViewController()
         controller = self.storyboard?.instantiateViewControllerWithIdentifier("HomeViewController") as! HomeViewController
         
         self.presentViewController(controller, animated: true, completion: nil)
     }
-
-    //table delegate method
-    
+*/
+  
 
     //TABLE DELEGATE METHODS
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath, object: PFObject!) -> PFTableViewCell? {

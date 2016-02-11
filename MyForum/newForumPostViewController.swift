@@ -33,7 +33,7 @@ class newForumPostViewController: UIViewController, UITextViewDelegate, UITextFi
         super.viewDidLoad()
         
         saveComment.enabled = false
-        //loadingSpinner.hidden = true
+        loadingSpinner.hidden = true
         commentField.delegate = self
         commentField.text = PLACEHOLDER_TEXT
         commentField.textColor = UIColor.lightGrayColor()
@@ -84,6 +84,15 @@ class newForumPostViewController: UIViewController, UITextViewDelegate, UITextFi
         }
 
     }
+    func showErrorView(error: NSError) {
+        if let errorMessage = error.userInfo["error"] as? String {
+            let alert = UIAlertController(title: "Error", message: errorMessage, preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+            presentViewController(alert, animated: true, completion: nil)
+        }
+    }
+
+    
 }
 
 
@@ -91,8 +100,13 @@ extension newForumPostViewController: UINavigationControllerDelegate {
     
     
     @IBAction func savePost(sender: AnyObject) {
-        //add a loading spinner in the future and animate it
-        //loadingSpinner.startAnimating()
+        //add a loading spinner and animate it
+        loadingSpinner.hidden = false
+        loadingSpinner.startAnimating()
+        
+        print("commentValue: \(commentField.text)")
+        print("commentTitle: \(commentTitle.text!)")
+        print("user: \(PFUser.currentUser()!)")
         
         if (commentField.text.isEmpty) || (commentTitle.text!.isEmpty){
             saveComment.enabled=false
@@ -104,12 +118,29 @@ extension newForumPostViewController: UINavigationControllerDelegate {
             commentPost.saveInBackgroundWithBlock { succeeded, error in
                     if succeeded{
                         print("UPLOADED NEW POST")
-                        self.navigationController?.popViewControllerAnimated(true)
-                        //self.navigationController!.popViewControllerAnimated(true)
+                        //self.navigationController?.popViewControllerAnimated(true)
+                        self.navigationController!.popViewControllerAnimated(true)
                     }else{
-                        print("ERROR UPLOADING NEW POST")
+                        if let errorMessage = error?.userInfo["error"] as? String {
+                            self.showErrorView(error!)
+                            //print("could not save")
+                            
+                        
+                        /*THIS IS THE ALTERNATIVE WAY TO SHOW AN ERROR
+                        let errorMsg = error! as NSError
+                        print(errorMsg.localizedDescription)
+                        var savedAlert = UIAlertView()
+                        savedAlert.title = errorMsg.localizedDescription
+                        savedAlert.addButtonWithTitle("OK")
+                        savedAlert.show()
+                            */
+                        
+                        self.loadingSpinner.stopAnimating()
+                        self.loadingSpinner.hidden = true
                     }
                 }
             }
         }
+    
+    }
 }

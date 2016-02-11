@@ -3,3 +3,4 @@ This is the very simple Forum example for collaboration between people.  You can
 The Photoes area lets you share photos from you camera and add comments to the photos.
 
 Finally, this is based on Parse.   Unfortunately, I started developing this app without knowing that Parse will go away, so I've used the SDK and the APIs, and learnt that Parse is going away only couple days before I was ready to submit the project.  It uses the Parse "Login" and "register" mechanism.
+

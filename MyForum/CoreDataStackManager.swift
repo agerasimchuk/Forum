@@ -21,9 +21,7 @@ private let SQLITE_FILE_NAME = "FavoriteComments.sqlite"
 
 class CoreDataStackManager {
     
-    
-    // MARK: - Shared Instance
-    
+
     /**
     *  This class variable provides an easy way to get access
     *  to a shared instance of the CoreDataStackManager class.
@@ -36,7 +34,7 @@ class CoreDataStackManager {
         return Static.instance
     }
     
-    // MARK: - The Core Data stack. The code has been moved, unaltered, from the AppDelegate.
+    // - The Core Data stack. The code has been moved, unaltered, from the AppDelegate.
     
     lazy var applicationDocumentsDirectory: NSURL = {
         

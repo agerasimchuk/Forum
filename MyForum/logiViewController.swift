@@ -19,7 +19,8 @@ class LoginViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+       
+        /*
         //Check if user exists and logged in
         if let user = PFUser.currentUser() {
             print("user is: \(user)")
@@ -38,6 +39,7 @@ class LoginViewController: UIViewController {
                 print("User cannot login")
             }
         }
+*/
     }
     
     // MARK: - Actions
@@ -45,20 +47,25 @@ class LoginViewController: UIViewController {
         
         PFUser.logInWithUsernameInBackground(userTextField.text!, password: passwordTextField.text!) { user, error in
             if user != nil {
+                print("performing taleview segue)")
                 //self.performSegueWithIdentifier(self.tableViewWallSegue, sender: nil)
-                var controller = HomeViewController()
-                controller = self.storyboard?.instantiateViewControllerWithIdentifier("HomeViewController") as! HomeViewController
+                
+                var controller = UINavigationController()
+                controller = self.storyboard?.instantiateViewControllerWithIdentifier("navForumController") as! UINavigationController
                 
                 self.presentViewController(controller, animated: true, completion: nil)
 
             } else if let error = error {
-                self.showErrorView(error)
+                //self.showErrorView(error)
                 print("Cannot login")
             }
+
+                //self.performSegueWithIdentifier(self.tableViewWallSegue, sender: nil)
         }
         
-        //performSegueWithIdentifier(scrollViewWallSegue, sender: nil)
+        
     }
+    
     
     func showErrorView(error: NSError) {
         if let errorMessage = error.userInfo["error"] as? String {
