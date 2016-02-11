@@ -17,5 +17,16 @@ The entry to the app is the login page.  If you are the parse signed-up user, yo
 If you are a new user, you can always sign-up.  After you do, you are directed to the Foru Home page.
 
 <h2>Forum Home Page</h2>
+Home Page lets you select if you'd like to review the Forum posts (the Forum option), or to look through all the pictures (the Photos option), or simply go to your persponalized spot to see your saved Forum entries.
+
+<h2>New entries</h2>
+Both Forum and Photos areas lets you add new Forum Comments or new Photos.  The system will capture the user and display this information in the Forum or Photos area.
+
+<h2>Favorites</h2>
+You can click on each Forum post you like which will save the entry in your local cache on the phone (CoreData).  You can remove the saved entries by swiping each one to the left and clicking "delete"."
+
+
+<h1>Navigation</h1>
+The app navigation is using the Navigation Stack which lets you navigate one page after another and get back to the previous visited page in the stack.'
 
 
