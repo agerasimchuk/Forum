@@ -1,6 +1,21 @@
+<title>MyForum app</title>
+
+<h1>Overview</h1>
 This is the very simple Forum example for collaboration between people.  You can add Comments, with the header and the description, you can "like" any of the comments entries, which will get saved in the Favorites location.
-
-The Photoes area lets you share photos from you camera and add comments to the photos.
-
+<br>
+The Photos area lets you share photos from you camera and add comments to the photos.
+<br>
 Finally, this is based on Parse.   Unfortunately, I started developing this app without knowing that Parse will go away, so I've used the SDK and the APIs, and learnt that Parse is going away only couple days before I was ready to submit the project.  It uses the Parse "Login" and "register" mechanism.
+
+
+<h1>Details</h1>
+
+<h2>Login</h2>
+The entry to the app is the login page.  If you are the parse signed-up user, you can login, which will bring you to the Forum Home page.
+
+<h2>Sign Up</h2>
+If you are a new user, you can always sign-up.  After you do, you are directed to the Foru Home page.
+
+<h2>Forum Home Page</h2>
+
 
