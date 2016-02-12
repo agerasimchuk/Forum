@@ -71,6 +71,8 @@ class newPhotoViewController: UIViewController, UITextViewDelegate{
         
         //1
         let file = PFFile(name: "image", data: pictureData!)
+        
+        if Reachability.isConnectedToNetwork() == true {
         file!.saveInBackgroundWithBlock({ (succeeded, error) -> Void in
             if succeeded {
                 //2
@@ -86,15 +88,25 @@ class newPhotoViewController: UIViewController, UITextViewDelegate{
                 //4
                 print("Uploaded: \(percent)%")
         })
+
+        }else {
+            print("Internet connection FAILED")
+            var alert = UIAlertView(title: "No Internet Connection", message: "Make sure your device is connected to the internet.", delegate: nil, cancelButtonTitle: "OK")
+            alert.show()
+            self.loadingSpinner.stopAnimating()
+            self.loadingSpinner.hidden = true
+            saveComment.enabled = true
+        }
+        
     }
     
     func saveWallPost(file: PFFile)
     {
-        //1
-        let picturePost = ForumPost(image: file, comment: self.commentField.text, user: PFUser.currentUser()! )
-        //2
-        print("in saveWall Post")
-        picturePost.saveInBackgroundWithBlock{ succeeded, error in
+        
+            print("Internet connection OK")
+            let picturePost = ForumPost(image: file, comment: self.commentField.text, user: PFUser.currentUser()! )
+
+            picturePost.saveInBackgroundWithBlock{ succeeded, error in
             if succeeded {
                 //3
                 self.navigationController?.popViewControllerAnimated(true)
@@ -106,10 +118,11 @@ class newPhotoViewController: UIViewController, UITextViewDelegate{
                     //print("could not save")
                     
                     self.loadingSpinner.stopAnimating()
+                    }
                 }
             }
         }
-    }
+    
     
     func showErrorView(error: NSError) {
         if let errorMessage = error.userInfo["error"] as? String {
@@ -120,9 +133,9 @@ class newPhotoViewController: UIViewController, UITextViewDelegate{
     }
     
 
-    
-    
 }
+
+
 
 extension newPhotoViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     

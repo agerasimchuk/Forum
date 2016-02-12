@@ -45,6 +45,7 @@
 		1571BDB21C45482D00E60C19 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1571BDB11C45482D00E60C19 /* libsqlite3.dylib */; };
 		1571BDB41C4551F100E60C19 /* newPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1571BDB31C4551F100E60C19 /* newPhotoViewController.swift */; };
 		15A75B691C64E01D009CE6EA /* CoreDataStackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A75B681C64E01D009CE6EA /* CoreDataStackManager.swift */; };
+		15D131B61C6E1A2000AE1097 /* connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D131B51C6E1A2000AE1097 /* connection.swift */; };
 		15F7B7D91C52B1740029803F /* FavoriteComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F7B7D81C52B1740029803F /* FavoriteComment.swift */; };
 		15F7B7DD1C52B3620029803F /* favoriteCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F7B7DC1C52B3620029803F /* favoriteCommentViewController.swift */; };
 		15F7B7E01C52B97E0029803F /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 15F7B7DE1C52B97E0029803F /* Model.xcdatamodeld */; };
@@ -113,6 +114,7 @@
 		1571BDB11C45482D00E60C19 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		1571BDB31C4551F100E60C19 /* newPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newPhotoViewController.swift; sourceTree = "<group>"; };
 		15A75B681C64E01D009CE6EA /* CoreDataStackManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStackManager.swift; sourceTree = "<group>"; };
+		15D131B51C6E1A2000AE1097 /* connection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = connection.swift; sourceTree = "<group>"; };
 		15F7B7D81C52B1740029803F /* FavoriteComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteComment.swift; sourceTree = "<group>"; };
 		15F7B7DC1C52B3620029803F /* favoriteCommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = favoriteCommentViewController.swift; sourceTree = "<group>"; };
 		15F7B7DF1C52B97E0029803F /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 				1522A2681C4EEF3F00BA7D3C /* ForumComment.swift */,
 				15F7B7D81C52B1740029803F /* FavoriteComment.swift */,
 				154F009C1C64460600EDE68C /* GlobalVariables.swift */,
+				15D131B51C6E1A2000AE1097 /* connection.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -449,6 +452,7 @@
 				1522A2691C4EEF3F00BA7D3C /* ForumComment.swift in Sources */,
 				1535BE321C61149E0006BD5A /* HomeViewController.swift in Sources */,
 				15F7B7D91C52B1740029803F /* FavoriteComment.swift in Sources */,
+				15D131B61C6E1A2000AE1097 /* connection.swift in Sources */,
 				1508B7C91C57F67000A08CC7 /* favoriteCommentTableViewCell.swift in Sources */,
 				1522A2711C50021B00BA7D3C /* commentsTableViewCell.swift in Sources */,
 				15F7B7E01C52B97E0029803F /* Model.xcdatamodeld in Sources */,
