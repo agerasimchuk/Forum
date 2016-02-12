@@ -16,6 +16,14 @@ class photosViewController: PFQueryTableViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if Reachability.isConnectedToNetwork() == true {
+            print("Internet connection OK")
+        } else {
+            print("Internet connection FAILED")
+            var alert = UIAlertView(title: "No Internet Connection", message: "Make sure your device is connected to the internet.", delegate: nil, cancelButtonTitle: "OK")
+            alert.show()
+        }
     }
     
     override func viewWillAppear(animated: Bool) {

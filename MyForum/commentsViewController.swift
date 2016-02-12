@@ -27,6 +27,10 @@ class commentsViewController: PFQueryTableViewController, NSFetchedResultsContro
     }()
     
     override func viewDidLoad() {
+        
+        if Reachability.isConnectedToNetwork() == true {
+            print("Internet connection OK")
+            
         super.viewDidLoad()
         if let user = PFUser.currentUser() {
             print("user is: \(user)")
@@ -45,9 +49,14 @@ class commentsViewController: PFQueryTableViewController, NSFetchedResultsContro
 
         }
         
-        print("Saved in view DID LOad is : \(GlobalVariables.sharedManager.saved)")
-        self.tableView.estimatedRowHeight = 500
-        self.tableView.rowHeight = UITableViewAutomaticDimension
+            print("Saved in view DID LOad is : \(GlobalVariables.sharedManager.saved)")
+            self.tableView.estimatedRowHeight = 500
+            self.tableView.rowHeight = UITableViewAutomaticDimension
+        } else {
+            print("Internet connection FAILED")
+            var alert = UIAlertView(title: "No Internet Connection", message: "Make sure your device is connected to the internet.", delegate: nil, cancelButtonTitle: "OK")
+            alert.show()
+        }
 
         
     }

@@ -16,6 +16,10 @@ class HomeViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if Reachability.isConnectedToNetwork() == true {
+            print("Internet connection OK")
+       
+        
         //Check if user exists and logged in
         if let user = PFUser.currentUser() {
             print("user is: \(user)")
@@ -30,7 +34,11 @@ class HomeViewController: UIViewController{
             presentViewController(controller, animated: true, completion: nil)
 
         }
-
+        } else {
+            print("Internet connection FAILED")
+            var alert = UIAlertView(title: "No Internet Connection", message: "Make sure your device is connected to the internet.", delegate: nil, cancelButtonTitle: "OK")
+            alert.show()
+        }
         
     }
 

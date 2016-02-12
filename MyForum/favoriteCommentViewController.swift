@@ -12,6 +12,8 @@ import CoreData
 
 class favoriteCommentsViewController: UITableViewController, NSFetchedResultsControllerDelegate{
     
+    var connection: Bool = true
+    
         lazy var sharedContext: NSManagedObjectContext = {
         return CoreDataStackManager.sharedInstance().managedObjectContext
     }()
@@ -47,8 +49,8 @@ class favoriteCommentsViewController: UITableViewController, NSFetchedResultsCon
     
     override func viewDidLoad() {
         super.viewDidLoad()
- 
-        //tableView.frame = CGRectMake(0.0, <#T##y: CGFloat##CGFloat#>, <#T##width: CGFloat##CGFloat#>, <#T##height: CGFloat##CGFloat#>)
+        
+               //tableView.frame = CGRectMake(0.0, <#T##y: CGFloat##CGFloat#>, <#T##width: CGFloat##CGFloat#>, <#T##height: CGFloat##CGFloat#>)
         tableView.frame = CGRectMake(2.0, 5.0, tableView.frame.size.width, tableView.frame.size.height);
         
         tableView.delegate = self
@@ -63,25 +65,26 @@ class favoriteCommentsViewController: UITableViewController, NSFetchedResultsCon
         
         // Step 9: set the fetchedResultsController.delegate = self
         fetchedResultsController.delegate = self
-
-        
         
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        tableView.reloadData()
+
+            tableView.reloadData()
+
     }
-    
+
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //print("Comments count is: \(comments.count)")
-        //return comments.count
-        let commentInfo = self.fetchedResultsController.sections![section]
-        print("commentInfor is: \(commentInfo.numberOfObjects)")
-        print("fetchedresults: \(fetchedResultsController)")
-        return commentInfo.numberOfObjects
-    }
+       
+                    let commentInfo = self.fetchedResultsController.sections![section]
+            print("commentInfor is: \(commentInfo.numberOfObjects)")
+            print("fetchedresults: \(fetchedResultsController)")
+  
+          return commentInfo.numberOfObjects
+            }
+
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         print("Cell")

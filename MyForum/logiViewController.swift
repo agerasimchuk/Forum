@@ -20,7 +20,13 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        
+        if Reachability.isConnectedToNetwork() == true {
+            print("Internet connection OK")
+        } else {
+            print("Internet connection FAILED")
+            var alert = UIAlertView(title: "No Internet Connection", message: "Make sure your device is connected to the internet.", delegate: nil, cancelButtonTitle: "OK")
+            alert.show()
+        }
         //Check if user exists and logged in
         if let user = PFUser.currentUser() {
             print("user is: \(user)")
@@ -45,6 +51,11 @@ class LoginViewController: UIViewController {
     // MARK: - Actions
     @IBAction func logInPressed(sender: AnyObject) {
         
+        
+        if Reachability.isConnectedToNetwork() == true {
+            print("Internet connection OK")
+        
+        
         PFUser.logInWithUsernameInBackground(userTextField.text!, password: passwordTextField.text!) { user, error in
             if user != nil {
                 print("performing taleview segue)")
@@ -63,7 +74,11 @@ class LoginViewController: UIViewController {
                 //self.performSegueWithIdentifier(self.tableViewWallSegue, sender: nil)
         }
         
-        
+        }else {
+            print("Internet connection FAILED")
+            var alert = UIAlertView(title: "No Internet Connection", message: "Make sure your device is connected to the internet.", delegate: nil, cancelButtonTitle: "OK")
+            alert.show()
+        }
     }
     
     

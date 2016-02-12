@@ -18,6 +18,10 @@ class RegisterViewController: UIViewController {
      
     // MARK: - Actions
     @IBAction func signUpPressed(sender: AnyObject) {
+        if Reachability.isConnectedToNetwork() == true {
+            print("Internet connection OK")
+            
+        
         //TODO
         //1
         let user = PFUser()
@@ -49,6 +53,13 @@ class RegisterViewController: UIViewController {
         controller = self.storyboard?.instantiateViewControllerWithIdentifier("navForumController") as! UINavigationController
         
         self.presentViewController(controller, animated: true, completion: nil)
+            
+        } else {
+            print("Internet connection FAILED")
+            var alert = UIAlertView(title: "No Internet Connection", message: "Make sure your device is connected to the internet.", delegate: nil, cancelButtonTitle: "OK")
+            alert.show()
+        }
+
 
 }
     

@@ -21,21 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //Connect your app to Parse app
         Parse.setApplicationId("LYerttpmW3lB99VFTqgnwgLcz5F5j8rbutQmMNqc", clientKey: "aoV6yxW33egRlMH7gtQH2oFCtt13ieHHF3VZGnu4")
         
-        //testing the connect of the app to parse by creating a new object
-        /*
-        let player = PFObject(className: "Player2")
-        player.setObject("John", forKey: "Name")
-        player.setObject(2400, forKey: "Score")
-        player.saveInBackgroundWithBlock { (succeeded, error) -> Void in
-            if succeeded {
-                print("Object Uploaded")
-            } else {
-                print("Error: \(error) \(error!.userInfo)")
-            }
-        }
-*/
-        
-        
+              
         return true
     }
 
