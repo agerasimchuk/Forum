@@ -20,20 +20,15 @@ class HomeViewController: UIViewController{
         if let user = PFUser.currentUser() {
             print("user is: \(user)")
             if user.authenticated {
-                print("this user is authenticated: \(user.authenticated)")
-                //Sequge with identifier will work only if we embed in navigator
-                //self.performSegueWithIdentifier(self.tableViewWallSegue, sender: nil)
-                
-               
-                
-                
-            }else{
-                print("User cannot login")
-                var controller = LoginViewController()
-                controller = self.storyboard?.instantiateViewControllerWithIdentifier("LoginViewController") as! LoginViewController
-                
-                presentViewController(controller, animated: true, completion: nil)
+            print("this user is authenticated: \(user.authenticated)")
             }
+        }else{
+            print("User cannot login")
+            var controller = LoginViewController()
+            controller = self.storyboard?.instantiateViewControllerWithIdentifier("LoginViewController") as! LoginViewController
+            
+            presentViewController(controller, animated: true, completion: nil)
+
         }
 
         

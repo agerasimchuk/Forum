@@ -20,7 +20,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        /*
+        
         //Check if user exists and logged in
         if let user = PFUser.currentUser() {
             print("user is: \(user)")
@@ -39,7 +39,7 @@ class LoginViewController: UIViewController {
                 print("User cannot login")
             }
         }
-*/
+
     }
     
     // MARK: - Actions
